@@ -141,5 +141,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 93c14c82f6b03de498a745ee32a5c4c7, type: 3}
   climbSprite: {fileID: 21300000, guid: e304f525944e327429cca31e4e99f3fb, type: 3}
   jumpSprite: {fileID: 21300000, guid: 93c14c82f6b03de498a745ee32a5c4c7, type: 3}
+  hitSprites:
+  - {fileID: -6583173733627563402, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: 8565341441553870506, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -4195102132484939499, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: 936282407430554429, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -6583173733627563402, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: 8565341441553870506, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -4195102132484939499, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: 936282407430554429, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -684270471665669920, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -684270471665669920, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -684270471665669920, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -684270471665669920, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -684270471665669920, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
+  - {fileID: -684270471665669920, guid: d869e700fecbbe045b0bc0b39caeb052, type: 3}
   moveSpeed: 3
   jumpStrength: 5
