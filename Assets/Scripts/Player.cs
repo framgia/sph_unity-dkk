@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private new SpriteRenderer spriteRenderer;
-    public new Sprite[] runSprites;
-    public new Sprite climbSprite;
-    public new Sprite jumpSprite;
+    private SpriteRenderer spriteRenderer;
+    public Sprite[] runSprites;
+    public Sprite climbSprite;
+    public Sprite jumpSprite;
     private new Rigidbody2D rigidbody;
     private int spriteIndex;
     private new Collider2D collider;
-    private new Collider2D[] results;
+    private Collider2D[] results;
     private Vector2 direction;
     private bool isGrounded;
     private bool isClimbing;
