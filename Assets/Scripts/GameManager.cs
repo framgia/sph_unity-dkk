@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private int level;
-    private int lives;
-    private int score;
+    public int level;
+    public int lives;
+    public int score;
 
     private void Start() 
     {
