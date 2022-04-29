@@ -7,18 +7,24 @@ public class GameManager : MonoBehaviour
     public int lives;
     public int score;
 
+    private int firstLevel = 1;
+
     private void Start() 
     {
         DontDestroyOnLoad(gameObject);
-        NewGame();
     }
 
-    private void NewGame()
+    public void NewGame()
     {
         lives = 3;
         score = 0;
         
-        LoadLevel(1);
+        LoadLevel(firstLevel);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     private void LoadLevel(int index) 
@@ -51,7 +57,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            LoadLevel(1);
+            LoadLevel(firstLevel);
         }
     }
 
