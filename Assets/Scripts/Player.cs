@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private Vector2 direction;
     private bool isGrounded;
     private bool isClimbing;
+    private bool isFailed;
+    private bool isComplete;
     public float moveSpeed = 1f;
     public float jumpStrength = 1f;
 
@@ -41,6 +43,8 @@ public class Player : MonoBehaviour
 
     private void Awake() 
     {
+        isComplete = false;
+        isFailed = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
         collider = GetComponent<Collider2D>();
@@ -59,6 +63,17 @@ public class Player : MonoBehaviour
 
     private void Update() 
     {
+        if (isFailed) 
+        {
+            enabled = false;
+            FindObjectOfType<GameManager>().LevelFailed();
+        }
+        else if (isComplete) 
+        {
+            enabled = false;
+            FindObjectOfType<GameManager>().LevelComplete();
+        }
+
         CheckCollision();
 
         if (isClimbing)
@@ -125,15 +140,13 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) 
     {
-        if (collision.gameObject.CompareTag("Objective")) 
+        if (collision.gameObject.CompareTag("Objective") && !isComplete) 
         {
-            enabled = false;
-            FindObjectOfType<GameManager>().LevelComplete();
+            isComplete = true;
         }
-        else if (collision.gameObject.CompareTag("Obstacle"))
+        else if (collision.gameObject.CompareTag("Obstacle") && !isFailed)
         {
-            enabled = false;
-            FindObjectOfType<GameManager>().LevelFailed();
+            isFailed = true;
         }
     }
 }
