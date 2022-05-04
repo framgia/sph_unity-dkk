@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     public float moveSpeed = 1f;
     public float jumpStrength = 1f;
 
+    public AudioManager AudioManager;
+
     private void CheckCollision() {
         isGrounded = false;
         isClimbing = false;
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
         else if (isGrounded && Input.GetButtonDown("Jump"))
         {
             direction = Vector2.up * jumpStrength;
+            AudioManager.PlayJumping();
         }
         else 
         {
@@ -103,6 +106,24 @@ public class Player : MonoBehaviour
         else if (direction.x < 0f)
         {
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
+        }
+
+        if (isGrounded && (direction.x > 0f || direction.x < 0f))
+        {
+            AudioManager.PlayWalking(); 
+        }
+        else
+        {
+            AudioManager.StopWalking();
+        }
+
+        if(isClimbing && (Input.GetAxisRaw("Vertical") > 0f || Input.GetAxisRaw("Vertical") < 0f))
+        {
+            AudioManager.PlayClimbing();
+        }
+        else
+        {
+            AudioManager.StopClimbing();
         }
     }
 
