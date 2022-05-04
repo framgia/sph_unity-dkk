@@ -27,6 +27,7 @@ public class PauseMenu : MonoBehaviour
         PausePanel.SetActive(true);
         Toggle = true;
         Time.timeScale = 0f;
+        AudioListener.pause = true;
     }
 
     public void Resume()
@@ -34,6 +35,7 @@ public class PauseMenu : MonoBehaviour
         PausePanel.SetActive(false);
         Toggle = false;
         Time.timeScale = 1f;
+        AudioListener.pause = false;
     }
 
     public void Quit()
